@@ -1,4 +1,4 @@
-module golang_alpine/app
+module golang_alpine
 
 go 1.20
 
