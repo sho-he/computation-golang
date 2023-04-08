@@ -1,4 +1,4 @@
-module golang_alpine
+module golang_computation
 
 go 1.20
 
