@@ -23,3 +23,9 @@ func (a *add) Inspect() string {
 	fmt.Println(t)
 	return t
 }
+
+func (a add) IsReducible() bool {
+	res := true
+	fmt.Println(res)
+	return res
+}

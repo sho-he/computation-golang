@@ -23,3 +23,9 @@ func  (n *number) Inspect() string {
 	fmt.Println(t)
 	return t
 }
+
+func (n number) IsReducible() bool {
+	res := false
+	fmt.Println(res)
+	return res
+}

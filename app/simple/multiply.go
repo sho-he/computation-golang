@@ -23,3 +23,9 @@ func (m *multiply) Inspect() string {
 	fmt.Println(t)
 	return t
 }
+
+func (m multiply) IsReducible() bool {
+	res := true
+	fmt.Println(res)
+	return res
+}
