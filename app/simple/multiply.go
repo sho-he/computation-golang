@@ -2,19 +2,24 @@ package simple
 
 import "fmt"
 
-type Multiply struct {
-	Left Number
-	Right Number
+type multiply struct {
+	Left number
+	Right number
 }
 
-func (m *Multiply) to_s() string {
+func Multiply(l number, r number) *multiply {
+	multiply := &multiply{Left: l, Right: r}
+	return multiply
+}
+
+func (m *multiply) to_s() string {
 	expression := fmt.Sprintf("%v * %v", m.Left.Value, m.Right.Value)
 	fmt.Println(expression)
 	return expression
 }
 
-func (m *Multiply) Inspect() string {
-	t := fmt.Sprintf("<< %T >>", m)
+func (m *multiply) Inspect() string {
+	t := fmt.Sprintf("<< Multiply >>")
 	fmt.Println(t)
 	return t
 }

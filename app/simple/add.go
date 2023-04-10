@@ -2,19 +2,24 @@ package simple
 
 import "fmt"
 
-type Add struct {
-	Left Number
-	Right Number
+type add struct {
+	Left number
+	Right number
 }
 
-func (a *Add) To_s() string {
+func Add(l number, r number) *add {
+	add := &add{Left: l, Right: r}
+	return add
+}
+
+func (a *add) To_s() string {
 	expression := fmt.Sprintf("%d + %d", a.Left.Value, a.Right.Value)
 	fmt.Println(expression)
 	return expression
 }
 
-func (a *Add) Inspect() string {
-	t := fmt.Sprintf("<< %T >>", a)
+func (a *add) Inspect() string {
+	t := fmt.Sprintf("<< Add >>")
 	fmt.Println(t)
 	return t
 }
