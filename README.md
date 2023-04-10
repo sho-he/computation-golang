@@ -8,4 +8,7 @@ go lang on alpine Linux Server
 - alpine:3.16 
 
 ## Docker Container Up
-
+```ash
+$ docker compose build
+$ docker compose up
+```
