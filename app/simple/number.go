@@ -8,8 +8,8 @@ type number struct {
 	Value int
 }
 
-func Number(value int) *number {
-	number := &number{Value: value}
+func Number(value int) number {
+	number := number{Value: value}
 	return number
 } 
 
@@ -19,7 +19,7 @@ func (n *number) To_s() string {
 }
 
 func  (n *number) Inspect() string {
-	t := fmt.Sprintf("<< %T >>", n)
+	t := fmt.Sprintf("<< Number >>")
 	fmt.Println(t)
 	return t
 }
