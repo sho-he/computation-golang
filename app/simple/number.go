@@ -4,21 +4,21 @@ import "strconv"
 import "fmt"
 
 
-type Number struct {
+type number struct {
 	Value int
 }
 
-func NewNumber(value int) *Number {
-	number := &Number{Value: value}
+func NewNumber(value int) *number {
+	number := &number{Value: value}
 	return number
 } 
 
-func (n *Number) To_s() string {
+func (n *number) To_s() string {
 	fmt.Println(strconv.Itoa(n.Value))
 	return strconv.Itoa(n.Value)
 }
 
-func  (n *Number) Inspect() string {
+func  (n *number) Inspect() string {
 	t := fmt.Sprintf("<< %T >>", n)
 	fmt.Println(t)
 	return t
