@@ -8,7 +8,7 @@ type number struct {
 	Value int
 }
 
-func NewNumber(value int) *number {
+func Number(value int) *number {
 	number := &number{Value: value}
 	return number
 } 
