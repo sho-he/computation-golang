@@ -3,17 +3,17 @@ package simple
 import "fmt"
 
 type multiply struct {
-	Left number
-	Right number
+	Left numberInterface
+	Right numberInterface
 }
 
-func Multiply(l number, r number) *multiply {
+func Multiply(l numberInterface, r numberInterface) *multiply {
 	multiply := &multiply{Left: l, Right: r}
 	return multiply
 }
 
-func (m *multiply) to_s() string {
-	expression := fmt.Sprintf("%v * %v", m.Left.Value, m.Right.Value)
+func (m *multiply) To_s() string {
+	expression := fmt.Sprintf("%v + %v", m.Left.To_s(), m.Right.To_s())
 	fmt.Println(expression)
 	return expression
 }

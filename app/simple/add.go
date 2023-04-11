@@ -3,17 +3,17 @@ package simple
 import "fmt"
 
 type add struct {
-	Left number
-	Right number
+	Left numberInterface
+	Right numberInterface
 }
 
-func Add(l number, r number) *add {
+func Add(l numberInterface, r numberInterface) *add {
 	add := &add{Left: l, Right: r}
 	return add
 }
 
 func (a *add) To_s() string {
-	expression := fmt.Sprintf("%d + %d", a.Left.Value, a.Right.Value)
+	expression := fmt.Sprintf("%v + %v", a.Left.To_s(), a.Right.To_s())
 	fmt.Println(expression)
 	return expression
 }
