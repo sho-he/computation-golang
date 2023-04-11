@@ -10,8 +10,9 @@ type number struct {
 
 type numberInterface interface {
 	To_s() string
-	Inspect() string
+	Inspect() 
 	IsReducible() bool
+	Expression()
 }
 
 func Number(value int) *number {
@@ -20,14 +21,16 @@ func Number(value int) *number {
 } 
 
 func (n *number) To_s() string {
-	fmt.Println(strconv.Itoa(n.Value))
 	return strconv.Itoa(n.Value)
 }
 
-func  (n *number) Inspect() string {
+func  (n *number) Inspect() {
 	t := fmt.Sprintf("<< Number >>")
 	fmt.Println(t)
-	return t
+}
+
+func (n *number) Expression() {
+	fmt.Println(n.To_s())
 }
 
 func (n number) IsReducible() bool {

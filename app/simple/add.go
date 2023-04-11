@@ -14,14 +14,16 @@ func Add(l numberInterface, r numberInterface) *add {
 
 func (a *add) To_s() string {
 	expression := fmt.Sprintf("%v + %v", a.Left.To_s(), a.Right.To_s())
-	fmt.Println(expression)
 	return expression
 }
 
-func (a *add) Inspect() string {
+func (a *add) Inspect() {
 	t := fmt.Sprintf("<< Add >>")
 	fmt.Println(t)
-	return t
+}
+
+func (a *add) Expression() {
+	fmt.Println(a.Left.To_s())
 }
 
 func (a add) IsReducible() bool {
