@@ -13,6 +13,8 @@ type numberInterface interface {
 	Inspect() 
 	IsReducible() bool
 	Expression()
+	Reduce() numberInterface
+	getNumber() int
 }
 
 func Number(value int) *number {
@@ -34,7 +36,13 @@ func (n *number) Expression() {
 }
 
 func (n number) IsReducible() bool {
-	res := false
-	fmt.Println(res)
-	return res
+	return false
+}
+
+func (n *number) Reduce() numberInterface {
+	return n
+}
+
+func (n *number) getNumber() int {
+	return n.Value
 }
