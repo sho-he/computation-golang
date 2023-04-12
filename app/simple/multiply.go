@@ -40,7 +40,7 @@ func (m *multiply) Reduce() numberInterface {
 	} else {
 		l := m.Left.getNumber()
 		r := m.Right.getNumber()
-		return Number(l + r)
+		return Number(l * r)
 	}
 }
 
