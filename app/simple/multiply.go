@@ -13,7 +13,7 @@ func Multiply(l numberInterface, r numberInterface) *multiply {
 }
 
 func (m *multiply) To_s() string {
-	expression := fmt.Sprintf("( %v * %v )", m.Left.To_s(), m.Right.To_s())
+	expression := fmt.Sprintf("(%v * %v)", m.Left.To_s(), m.Right.To_s())
 	return expression
 }
 
@@ -23,7 +23,7 @@ func (m *multiply) Inspect() {
 }
 
 func (m *multiply) Expression() {
-	fmt.Printf("( %v * %v )\n", m.Left.To_s(), m.Right.To_s())
+	fmt.Printf("(%v * %v)\n", m.Left.To_s(), m.Right.To_s())
 }
 
 func (m *multiply) IsReducible() bool {

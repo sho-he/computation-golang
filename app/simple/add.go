@@ -13,7 +13,7 @@ func Add(l numberInterface, r numberInterface) *add {
 }
 
 func (a *add) To_s() string {
-	expression := fmt.Sprintf("( %v + %v )", a.Left.To_s(), a.Right.To_s())
+	expression := fmt.Sprintf("(%v + %v)", a.Left.To_s(), a.Right.To_s())
 	return expression
 }
 
@@ -23,7 +23,7 @@ func (a *add) Inspect() {
 }
 
 func (a *add) Expression() {
-	fmt.Printf("%v + %v\n", a.Left.To_s(), a.Right.To_s())
+	fmt.Printf("(%v + %v)\n", a.Left.To_s(), a.Right.To_s())
 }
 
 func (a *add) IsReducible() bool {
