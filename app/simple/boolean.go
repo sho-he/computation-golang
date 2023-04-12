@@ -28,3 +28,15 @@ func (b *boolean) Expression() {
 func (b *boolean) IsReducible() bool {
 	return false
 }
+
+func (b *boolean) Reduce() numberInterface {
+	return Number(b.getNumber())
+}
+
+func (b *boolean) getNumber() int {
+	if b.Value == true {
+		return 1
+	} else {
+		return 0
+	}
+}
