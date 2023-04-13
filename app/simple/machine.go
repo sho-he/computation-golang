@@ -4,15 +4,16 @@ import "fmt"
 
 type machine struct {
 	expression numberInterface
+	environment environment
 }
 
-func Machine(e numberInterface) *machine {
-	machine := &machine{expression: e}
+func Machine(e numberInterface, env environment) *machine {
+	machine := &machine{expression: e, environment: env}
 	return machine
 }
 
 func (m *machine) Step(expression numberInterface) numberInterface {
-	return expression.Reduce()
+	return expression.Reduce(m.environment)
 }
 
 func (m *machine) Run() {
