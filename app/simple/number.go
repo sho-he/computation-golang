@@ -8,15 +8,6 @@ type number struct {
 	Value int
 }
 
-type numberInterface interface {
-	To_s() string
-	Inspect() 
-	IsReducible() bool
-	Expression()
-	Reduce() numberInterface
-	getNumber() int
-}
-
 func Number(value int) *number {
 	number := &number{Value: value}
 	return number
