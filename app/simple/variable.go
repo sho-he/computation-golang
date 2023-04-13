@@ -3,7 +3,7 @@ package simple
 import "fmt"
 
 type variable struct {
-
+	name string
 }
 
 func Variable() *variable {
@@ -29,3 +29,6 @@ func (v *variable) IsReducible() bool {
 	return true
 }
 
+func (v *variable) Reduce(env environment) numberInterface {
+	return env[v.name]
+}
