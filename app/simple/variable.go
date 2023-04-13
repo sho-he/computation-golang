@@ -6,8 +6,8 @@ type variable struct {
 	name string
 }
 
-func Variable() *variable {
-	variable := &variable{}
+func Variable(name string) *variable {
+	variable := &variable{name: name}
 	return variable
 }
 
@@ -21,14 +21,18 @@ func (v *variable) Inspect() {
 	fmt.Println(t)
 }
 
-func (v *variable) Expression() {
-	fmt.Printf("x\n")
-}
-
 func (v *variable) IsReducible() bool {
 	return true
 }
 
+func (v *variable) Expression() {
+	fmt.Printf("x\n")
+}
+
 func (v *variable) Reduce(env environment) numberInterface {
 	return env[v.name]
+}
+
+func (v *variable) getNumber() int {
+	return 0
 }
