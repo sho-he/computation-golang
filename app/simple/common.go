@@ -10,3 +10,8 @@ type numberInterface interface {
 }
 
 type environment map[string]numberInterface
+
+func Environment(variable string, value numberInterface) environment { 
+	env := environment{variable: value}
+	return env
+}
