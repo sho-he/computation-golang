@@ -5,6 +5,8 @@ type numberInterface interface {
 	Inspect() 
 	IsReducible() bool
 	Expression()
-	Reduce() numberInterface
+	Reduce(env environment) numberInterface
 	getNumber() int
 }
+
+type environment map[string]numberInterface

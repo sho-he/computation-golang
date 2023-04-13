@@ -30,12 +30,12 @@ func (g *lessThan) IsReducible() bool {
 	return true
 }
 
-func (g *lessThan) Reduce() numberInterface {
+func (g *lessThan) Reduce(env environment) numberInterface {
 	if g.Left.IsReducible() {
-		result := LessThan(g.Left.Reduce(), g.Right)
+		result := LessThan(g.Left.Reduce(env), g.Right)
 		return result
 	} else if g.Right.IsReducible() {
-		result := LessThan(g.Left, g.Right.Reduce())
+		result := LessThan(g.Left, g.Right.Reduce(env))
 		return result
 	} else {
 		l := g.Left.getNumber()

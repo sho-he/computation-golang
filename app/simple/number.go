@@ -30,7 +30,7 @@ func (n number) IsReducible() bool {
 	return false
 }
 
-func (n *number) Reduce() numberInterface {
+func (n *number) Reduce(env environment) numberInterface {
 	return n
 }
 

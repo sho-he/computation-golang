@@ -29,7 +29,7 @@ func (b *boolean) IsReducible() bool {
 	return false
 }
 
-func (b *boolean) Reduce() numberInterface {
+func (b *boolean) Reduce(env environment) numberInterface {
 	return Number(b.getNumber())
 }
 

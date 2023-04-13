@@ -30,12 +30,12 @@ func (m *multiply) IsReducible() bool {
 	return true
 }
 
-func (m *multiply) Reduce() numberInterface {
+func (m *multiply) Reduce(env environment) numberInterface {
 	if m.Left.IsReducible() {
-		result := Multiply(m.Left.Reduce(), m.Right)
+		result := Multiply(m.Left.Reduce(env), m.Right)
 		return result
 	} else if m.Right.IsReducible() {
-		result := Multiply(m.Left, m.Right.Reduce())
+		result := Multiply(m.Left, m.Right.Reduce(env))
 		return result
 	} else {
 		l := m.Left.getNumber()
