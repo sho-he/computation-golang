@@ -3,10 +3,11 @@ package simple
 import "fmt"
 
 type doNothing struct {
+	environment environment
 }
 
-func DoNothing() *doNothing {
-	return &doNothing{}
+func DoNothing(env environment) *doNothing {
+	return &doNothing{environment: env}
 }
 
 func (d *doNothing) To_s() string {
@@ -20,4 +21,12 @@ func (d *doNothing) Inspect() {
 
 func (d *doNothing) IsReducible() bool {
 	return false
+}
+
+func (d *doNothing) Expression(env environment) {
+	fmt.Printf(d.To_s() + " %v\n", env)
+}
+
+func (d *doNothing) Reduce(env environment) stateInterface {
+	return d
 }

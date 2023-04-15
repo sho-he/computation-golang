@@ -4,7 +4,7 @@ type numberInterface interface {
 	To_s() string
 	Inspect() 
 	IsReducible() bool
-	Expression()
+	Expression(environment)
 	Reduce(env environment) numberInterface
 	getNumber() int
 }
@@ -17,4 +17,7 @@ func Environment(variable string, value numberInterface) environment {
 }
 
 type stateInterface interface {
+	Reduce(env environment) stateInterface
+	IsReducible() bool
+	Expression(environment)
 }

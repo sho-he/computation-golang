@@ -22,7 +22,7 @@ func (g *lessThan) Inspect() {
 	fmt.Println(t)
 }
 
-func (g *lessThan) Expression() {
+func (g *lessThan) Expression(e environment) {
 	fmt.Printf("%v > %v\n", g.Left.To_s(), g.Right.To_s())
 }
 

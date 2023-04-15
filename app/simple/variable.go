@@ -25,7 +25,7 @@ func (v *variable) IsReducible() bool {
 	return true
 }
 
-func (v *variable) Expression() {
+func (v *variable) Expression(e environment) {
 	fmt.Printf("x\n")
 }
 

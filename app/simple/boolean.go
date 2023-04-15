@@ -21,7 +21,7 @@ func (b *boolean) Inspect() {
 	fmt.Println(t)
 }
 
-func (b *boolean) Expression() {
+func (b *boolean) Expression(e environment) {
 	fmt.Println(b.To_s())
 }
 

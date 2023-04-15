@@ -22,7 +22,7 @@ func (a *add) Inspect() {
 	fmt.Println(t)
 }
 
-func (a *add) Expression() {
+func (a *add) Expression(e environment) {
 	fmt.Printf("(%v + %v)\n", a.Left.To_s(), a.Right.To_s())
 }
 
@@ -32,11 +32,9 @@ func (a *add) IsReducible() bool {
 
 func (a *add) Reduce(env environment) numberInterface {
 	if a.Left.IsReducible() {
-		result := Add(a.Left.Reduce(env), a.Right)
-		return result
+		return Add(a.Left.Reduce(env), a.Right)
 	} else if a.Right.IsReducible() {
-		result := Add(a.Left, a.Right.Reduce(env))
-		return result
+		return Add(a.Left, a.Right.Reduce(env))
 	} else {
 		l := a.Left.getNumber()
 		r := a.Right.getNumber()

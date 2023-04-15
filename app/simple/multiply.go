@@ -22,7 +22,7 @@ func (m *multiply) Inspect() {
 	fmt.Println(t)
 }
 
-func (m *multiply) Expression() {
+func (m *multiply) Expression(e environment) {
 	fmt.Printf("(%v * %v)\n", m.Left.To_s(), m.Right.To_s())
 }
 

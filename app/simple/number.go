@@ -22,7 +22,7 @@ func  (n *number) Inspect() {
 	fmt.Println(t)
 }
 
-func (n *number) Expression() {
+func (n *number) Expression(e environment) {
 	fmt.Println(n.To_s())
 }
 
