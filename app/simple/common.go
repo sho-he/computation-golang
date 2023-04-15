@@ -15,3 +15,6 @@ func Environment(variable string, value numberInterface) environment {
 	env := environment{variable: value}
 	return env
 }
+
+type stateInterface interface {
+}
