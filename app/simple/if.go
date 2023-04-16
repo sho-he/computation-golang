@@ -45,7 +45,3 @@ func (i *_if) Reduce(env environment) stateInterface {
 	}
 	return nil
 }
-
-func (i *_if) getNumber() int {
-	return 0
-}
