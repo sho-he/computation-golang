@@ -20,4 +20,5 @@ type stateInterface interface {
 	Reduce(env environment) stateInterface
 	IsReducible() bool
 	Expression(environment)
+	To_s() string
 }
