@@ -33,7 +33,6 @@ func (a *assign) Reduce(e environment) stateInterface {
 		return Assign(a.name, a.expression.Reduce(e))
 	} else {
 		number := a.expression
-		fmt.Printf("%v", number)
 		e[a.name] = number
 		return DoNothing(e)
 	}
