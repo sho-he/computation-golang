@@ -42,6 +42,6 @@ func (i *_if) Reduce(env environment) stateInterface {
 				return i.alternative
 			}
 		}
+		return nil
 	}
-	return nil
 }
