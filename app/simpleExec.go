@@ -7,4 +7,5 @@ func main () {
 		simple.Machine(simple.LessThan(simple.Add(simple.Number(1), simple.Number(2)), simple.Number(3)),simple.Environment("x", simple.Number(2))).Run()
 
 		simple.SMachine(simple.Assign("x", simple.Add(simple.Number(1), simple.Number(2))), simple.Environment("x", simple.Number(2))).Run()
+		simple.SMachine(simple.Sequence(simple.Assign("x", simple.Add(simple.Number(1), simple.Number(2))),simple.Assign("x", simple.Add(simple.Number(1), simple.Number(2)))), simple.Environment("x", simple.Number(2))).Run()
 }
